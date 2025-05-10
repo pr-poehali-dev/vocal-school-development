@@ -1,5 +1,11 @@
-
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Icon from "@/components/ui/icon";
 import { Link } from "react-router-dom";
@@ -7,8 +13,9 @@ import { Link } from "react-router-dom";
 const pricingOptions = [
   {
     title: "Индивидуальные занятия",
-    description: "Персональный подход с фокусом на ваши цели и особенности голоса",
-    pricePerLesson: 2500,
+    description:
+      "Персональный подход с фокусом на ваши цели и особенности голоса",
+    pricePerLesson: 1200,
     duration: "60 минут",
     format: "Офлайн",
     features: [
@@ -22,7 +29,7 @@ const pricingOptions = [
   {
     title: "Групповые занятия",
     description: "Обучение в мини-группах до 4 человек с общей программой",
-    pricePerLesson: 1500,
+    pricePerLesson: 800,
     duration: "60 минут",
     format: "Офлайн",
     features: [
@@ -36,7 +43,7 @@ const pricingOptions = [
   {
     title: "Онлайн обучение",
     description: "Дистанционные уроки из любой точки мира через Zoom",
-    pricePerLesson: 2000,
+    pricePerLesson: 1000,
     duration: "60 минут",
     format: "Онлайн",
     features: [
@@ -49,8 +56,9 @@ const pricingOptions = [
   },
   {
     title: "Интенсивный курс",
-    description: "Ускоренная программа для быстрого прогресса и подготовки к мероприятиям",
-    pricePerLesson: 3000,
+    description:
+      "Ускоренная программа для быстрого прогресса и подготовки к мероприятиям",
+    pricePerLesson: 1500,
     duration: "90 минут",
     format: "Офлайн/Онлайн",
     features: [
@@ -78,8 +86,8 @@ const Pricing = () => {
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {pricingOptions.map((option, index) => (
-            <Card 
-              key={index} 
+            <Card
+              key={index}
               className={`border-slate-200 transition-all hover:shadow-md relative ${
                 option.recommended ? "border-purple-300 shadow-md" : ""
               }`}
@@ -89,19 +97,22 @@ const Pricing = () => {
                   Рекомендуем
                 </div>
               )}
-              
+
               <CardHeader className="pb-2">
                 <CardTitle className="text-xl">{option.title}</CardTitle>
                 <CardDescription className="text-slate-600">
                   {option.description}
                 </CardDescription>
               </CardHeader>
-              
+
               <CardContent className="space-y-4">
                 <div className="space-y-2">
                   <div className="text-3xl font-bold text-slate-900">
                     {option.pricePerLesson} ₽
-                    <span className="text-sm font-normal text-slate-600"> / занятие</span>
+                    <span className="text-sm font-normal text-slate-600">
+                      {" "}
+                      / занятие
+                    </span>
                   </div>
                   <div className="flex flex-col gap-1 text-sm text-slate-600">
                     <div className="flex items-center gap-2">
@@ -114,20 +125,24 @@ const Pricing = () => {
                     </div>
                   </div>
                 </div>
-                
+
                 <ul className="space-y-2">
                   {option.features.map((feature, i) => (
                     <li key={i} className="flex items-start gap-2 text-sm">
-                      <Icon name="Check" className="mt-0.5 text-green-500 shrink-0" size={16} />
+                      <Icon
+                        name="Check"
+                        className="mt-0.5 text-green-500 shrink-0"
+                        size={16}
+                      />
                       <span>{feature}</span>
                     </li>
                   ))}
                 </ul>
               </CardContent>
-              
+
               <CardFooter>
-                <Button 
-                  asChild 
+                <Button
+                  asChild
                   className={`w-full ${option.recommended ? "bg-purple-600 hover:bg-purple-700" : ""}`}
                   variant={option.recommended ? "default" : "outline"}
                 >
@@ -137,10 +152,14 @@ const Pricing = () => {
             </Card>
           ))}
         </div>
-        
+
         <div className="mt-12 text-center">
-          <p className="text-slate-600 mb-4">Первое пробное занятие — 1000 ₽</p>
-          <Button asChild size="lg" className="bg-purple-600 hover:bg-purple-700">
+          <p className="text-slate-600 mb-4">Первое пробное занятие — 600 ₽</p>
+          <Button
+            asChild
+            size="lg"
+            className="bg-purple-600 hover:bg-purple-700"
+          >
             <Link to="/trial-lesson">Записаться на пробное занятие</Link>
           </Button>
         </div>
